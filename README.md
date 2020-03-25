@@ -45,8 +45,9 @@ date || credit || debit || balance
 1. Run bundle install
 2. Run the following: irb -r ./lib/account.rb -r ./lib/statement.rb
 3. Initialize a new account (e.g. account = Account.new)
-4. To print a statement, pass account into Statement (e.g. statement = Statement.new(account)) and run statement.print_statement
-5. Enjoy!
+4. Debit/credit account using account.credit(amount) or account.debit(amount)
+5. To print a statement, pass account into Statement (e.g. statement = Statement.new(account)) and run statement.print_statement
+6. Enjoy!
 
 # How it looks
 ```
