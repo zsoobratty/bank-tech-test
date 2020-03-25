@@ -38,3 +38,28 @@ Debit 500
 Output:
 date || credit || debit || balance
 14/01/2012 || || 500.00 || 2500.00
+
+
+# How to use
+
+1. Run bundle install
+2. Run the following: irb -r ./lib/account.rb -r ./lib/statement.rb
+3. Initialize a new account (e.g. account = Account.new)
+4. To print a statement, pass account into Statement (e.g. statement = Statement.new(account)) and run statement.print_statement
+5. Enjoy!
+
+# How it looks
+```
+2.6.3 :002 > account = Account.new
+ => #<Account:0x00007fbdac13eb58 @balance=0, @transaction_history=[]> 
+2.6.3 :003 > statement = Statement.new(account)
+ => #<Statement:0x00007fbdac1453e0 @account=#<Account:0x00007fbdac13eb58 @balance=0, @transaction_history=[]>> 
+2.6.3 :004 > account.credit 5000
+ => ["2020-03-25 || 5000.0 ||  || 5000.0"] 
+2.6.3 :005 > account.debit 2500
+ => ["2020-03-25 || 5000.0 ||  || 5000.0", "2020-03-25 ||  || 2500.0 || 2500.0"] 
+2.6.3 :006 > print statement.print_statement
+date || credit || debit || balance
+2020-03-25 || 5000.0 ||  || 5000.0
+2020-03-25 ||  || 2500.0 || 2500.0
+```

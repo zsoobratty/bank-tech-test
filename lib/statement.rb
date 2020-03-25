@@ -6,8 +6,8 @@ class Statement
   def print_statement
     statement = 'date || credit || debit || balance'
     @account.transaction_history.each do |transaction|
-      statement += "\n" + transaction 
+      statement += "\n" + transaction
     end
-    return statement
+    statement
   end
 end

@@ -1,7 +1,7 @@
 require 'account'
 
 describe Account do
-  let (:account) { Account.new }
+  let(:account) { Account.new }
   describe '#initialize' do
     it 'has a starting balance of 0' do
       expect(account.balance).to eq 0
@@ -25,10 +25,10 @@ describe Account do
 
   describe '#log_transaction' do
     it 'saves a transaction to the history' do
-      allow(Date).to receive(:today).and_return Date.new(2020,3,23)
+      allow(Date).to receive(:today).and_return Date.new(2020, 3, 23)
       account.credit(1000)
       account.debit(500)
-      expect(account.transaction_history).to eq(["2020-03-23 || 1000.0 ||  || 1000.0", "#{Date.today} ||  || 500.0 || 500.0"])
+      expect(account.transaction_history).to eq(["2020-03-23 || 1000.0 ||  || 1000.0", "2020-03-23 ||  || 500.0 || 500.0"])
     end
   end
 end
