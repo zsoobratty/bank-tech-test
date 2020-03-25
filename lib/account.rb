@@ -18,6 +18,8 @@ class Account
 
   end
 
+  private 
+
   def log_transaction(date = Date.today, credit, debit)
     @transaction_history.push("#{date} || #{credit} || #{debit} || #{@balance}")
   end
